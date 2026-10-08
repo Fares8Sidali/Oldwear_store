@@ -34,7 +34,7 @@ export const products = pgTable("products",{
     createdAt: timestamp("created_at",{withTimezone: true}).notNull().defaultNow(),
 });
 
-export const checkoutSession = pgTable("checkout_sessions",{
+export const checkoutSessions = pgTable("checkout_sessions",{
     id: uuid("id").defaultRandom().primaryKey(),
     userId: uuid("user_id").notNull().references(()=>users.id,{onDelete:"cascade"}),
     polarCheckoutId: text("polar_checkout_id").unique(),
