@@ -13,10 +13,4 @@ router.post("/products",createAdminProduct)
 
 router.patch("/products/:id",updateAdminProduct)
 
-/*router.get("/",listProducts)
-
-router.get("/categories",getCategories)
-
-router.get("/:slug",getProductBySlug)*/
-
 export default router
