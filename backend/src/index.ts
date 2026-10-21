@@ -71,7 +71,7 @@ if(fs.existsSync(publicDir)){
 
 Sentry.setupExpressErrorHandler(app)
 
-app.use((err:unknown,req:express.Request,res:express.Response,next:express.NextFunction)=>{
+app.use((_err:unknown,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{
   const sentryId = (res as express.Response & {sentry?:string}).sentry;
 
   res.status(500).json({
